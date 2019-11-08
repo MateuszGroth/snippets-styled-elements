@@ -1,0 +1,114 @@
+body {
+    width: 100%;
+    height : 100%;
+
+    margin : 0;
+    padding: 0;
+    background: palevioletred;
+    
+}
+
+.con{
+    width: 100%;
+    height : 100vh;
+    
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-button{
+    border : 2px solid black;
+    border-radius: 20px;
+    background: white;
+    font-size : 2em;
+    padding : .1em 1em .1em 1em;
+}
+.modal{
+    display: none;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    background: red;
+    transform: translate3d(-50%, -50%, 0);
+    width: 60vw;
+    height : 60vh;
+    
+    box-shadow: 0 0 0 100vw rgba(0,0,0,0.5);
+
+}
+.custom-button:hover{
+    background: black;
+    color : white;
+}
+/* .box:hover ~ .modal, .modal:hover{
+    display: block!important;
+} */
+
+.box:nth-child(1){
+    text-align: center;
+
+    background: white;
+    padding: 3em;
+    position : relative;
+
+     box-shadow : 0 0 0 10px red,
+                  0 0 0 20px pink,
+                  0 0 0 30px green; /* 20px 20px  inset optional*/
+}
+.box:nth-child(2){
+    text-align: center;
+
+    background: white;
+    padding: 3em;
+    position : relative;
+
+    /* with offset */
+    box-shadow : 0 20px 0 -10px red, 
+                 0 40px 0 -20px pink,
+                 0 60px 0 -30px green; /* 20px 20px  inset optional*/
+}
+.box:nth-child(3){
+    text-align: center;
+
+    background: white;
+    padding: 3em;
+    position : relative;
+
+    /* with pseude */
+    box-shadow: 0 25px 35px -35px rgba(0,0,0,.25);
+}
+
+.box:nth-child(3)::after{
+    content : '';
+    position: absolute;
+    top : 90%;
+    bottom : 9px;
+    left : 45px;
+    right : 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.5);
+
+    transform : rotate(3deg);
+
+    background: pink;
+    z-index: -1;
+}
+.box:nth-child(3)::before{
+    content : '';
+    position: absolute;
+    top : 90%;
+    bottom : 9px;
+    left : 5px;
+    right : 45px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.5);
+
+    transform : rotate(-3deg);
+    z-index: -1;
+    background: lightblue;
+}
+.gap{
+    height : 100px;
+}

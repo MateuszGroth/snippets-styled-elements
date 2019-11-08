@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* Create .elev-cont
+           Its child with class elev-anim will be animated from the button to a loading bar
+           It will end up as a fully loaded bar and is going to stay that way untill it gets added a class named 'finished'
+        
+        */
+.elev-cont {
+    --animTime : 1000ms;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    z-index: 1;
+
+    font-size: .9rem;
+    font-weight: 500;
+
+    height: 39px;
+    width: calc(100% - 4.7rem);
+
+    /*NEW*/
+    width: 230px;
+    position: absolute;
+    left : calc(641px - 1.5rem);
+    bottom : 25px;
+
+    background-image: linear-gradient(to right, #fff 0%, #fff 100%);
+    background-size: 100% 40%;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+}
+
+.elev-anim {
+    --main-color-blue : blue;
+    --map-font : #666666;
+    --map-load : var(--main-color-blue);
+
+    position: relative;
+
+    box-shadow: var(--box-shadow);
+
+    animation: elevationLoad var(--animTime) forwards ease-in-out;
+
+    background-image: linear-gradient(to right, #fff 0%, #fff 100%);
+    background-position: 0 0px;
+    color : var(--map-font);
+    background-repeat: no-repeat;
+    padding : .6em 1.2em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height : 100%;
+    width: 100%;
+    outline: 0px solid var(--map-load);
+}
+
+.elev-anim.tmp {
+    animation: none!important;
+}
+
+.elev-anim span {
+    color : inherit;
+    white-space: nowrap;
+}
+
+@keyframes elevationLoad {
+    0% {
+        transform: scaleY(1);
+        background : #fff;
+    }
+
+    10% {
+        color: transparent;
+    }
+
+    25% {
+        transform: scaleY(.4);
+        outline: 2px solid var(--map-load);
+        background : #fff;
+    }
+    26% {
+        background-image: linear-gradient(to right, var(--map-load) 0%, var(--map-load) 100%);
+        background-repeat: no-repeat;
+        background-size: 0 100%;
+        outline: 2px solid var(--map-load);
+    }
+
+    100% {
+        color: transparent;
+        background-image: linear-gradient(to right, var(--map-load) 0%, var(--map-load) 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        transform: scaleY(.4);
+        outline: 2px solid var(--map-load);
+    }
+}
+
+.elev-anim.finished {
+    animation : elevationLoadFinish forwards 150ms ease-in-out;
+}
+
+@keyframes elevationLoadFinish {
+    0% {
+        outline: 2px solid var(--map-load);
+        transform: scaleY(.4);
+        background-size: 100% 100%;
+        color : transparent;
+    }
+    100% {
+        transform: scaleY(1);
+        background-size: 100% 100%;
+        color : var(--map-font);
+        outline: 0px solid var(--map-load);
+    }
+}
+</style>
+</head>
+<body>
+    
+</body>
+</html>

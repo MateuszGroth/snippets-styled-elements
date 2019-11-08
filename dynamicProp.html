@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/dynamicProp.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="card" style = "--x : 0; --y : 0;">
+        <h1>Testing This</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur enim itaque nisi. Ipsa deserunt maxime quae. Quasi qui molestias facere reiciendis, architecto vel assumenda suscipit magnam libero eius quo enim?</p>
+    </div>
+
+
+    <script>
+    
+        document.querySelector('.card').onmousemove = (e)=>{
+
+            const x = e.pageX - e.target.offsetLeft;
+            const y = e.pageY - e.target.offsetTop;
+
+            e.target.style.setProperty('--x', `${x}px`)
+            e.target.style.setProperty('--y', `${y}px`)
+        }
+    
+    </script>
+</body>
+</html>

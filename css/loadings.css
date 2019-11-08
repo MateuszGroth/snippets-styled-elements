@@ -1,0 +1,210 @@
+body{
+    font-family: 'Montserrat';
+    font-size : 1.8em;
+    padding: 1em;
+    line-height: 1.6;
+    /* background: rgba(0,192,200,0.2); */
+    background-image : linear-gradient(135deg,#f5f7fa 0%, #c3cfe2 100%);
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh; */
+}
+*{
+    background : var(--background);
+    --background : initial;
+    outline : var(--outline);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    width : 80%;
+    font-size : 1.4em;
+}
+button {
+    font-size : 2em
+}
+.msg{
+    padding : 1em;
+    margin : 1em 0;
+    background: #fffde3;
+    width : 30%;
+}
+input:not(:placeholder-shown) + .msg{
+    animation: myAnimation 1s ease;
+}
+@keyframes myAnimation{
+    0%{
+        transform: translateY(-20%);
+        opacity : 0;
+    }
+    
+    100%{
+        transform: translateY(0);
+        opacity : 1;
+    }
+}
+
+div.block{
+    text-align: center;
+    padding: 2em 1em;
+    --background: radial-gradient(transparent calc(100% - 20px), currentColor 0);
+    color : red;
+    width : 4em;
+}
+div.square-out{
+    --background : blue;
+    width : 100px;
+    height : 100px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    --outline : 1px solid #fff;
+    /* position: relative;
+    z-index: 1 */
+}
+div.square-in{
+    width : 30px;
+    height:30px;    
+    --background : purple;
+}
+
+/* loader 1*/
+
+.loader{
+    /* margin-top : -50px; */
+    /* background: red; */
+    height : 50px;
+    width : 50px;
+    margin: 1em 0 3em 1em; 
+    animation: rotate 3s infinite linear;
+    transform-origin: bottom center;
+}
+.circle{
+    display: inline-block;
+    background: purple;
+    height : 40px;
+    width : 40px;
+    border-radius: 50%;
+    animation: grow 1.5s infinite;
+    margin : -10px;
+}
+
+.circle:nth-child(2){
+    background: palevioletred;
+    animation-delay: 0.75s
+}
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow{
+    0%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+/* loader 2*/
+
+.loader2{
+    text-align: center;
+    margin: auto; 
+    color : palevioletred;
+}
+
+.loader2::after{
+    content : '\2026';
+    display: inline-block;
+    overflow: hidden;
+    width : 0px;
+    vertical-align: bottom;
+    animation: dots steps(4, end) 2s infinite;
+}
+@keyframes dots{
+    to{
+        width : 1.25em;
+    }
+}
+
+/* loader 3 */
+.loader3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em; 
+}
+.loader3 > span{
+    display: inline-block;
+    background: purple;
+    width : 0;
+    height : 0;
+    border-radius: 50%;
+    margin : 0 8px;
+    transform: translate3d(0);
+    animation: bounce  0.6s infinite alternate;
+}
+
+.loader3 > span:nth-child(2){
+    background : palevioletred;
+    animation-delay: 200ms;
+}
+
+.loader3 > span:nth-child(3){
+    animation-delay: 400ms;
+}
+@keyframes  bounce{
+    to{
+        width : 16px;
+        height : 16px;
+        transform: translate3d(0,-16px,0);
+    }
+}
+/* loader 4 */
+.loader4{
+    margin: 3em;
+    height : 80px;
+    width : 80px;
+    animation: rotate4 3s infinite linear;
+    transform-origin: bottom center; 
+}
+.circle4{
+    background: palevioletred;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin : -5px;
+    transform: scale(0);
+    animation: scale4 1.5s infinite;
+}
+.circle4:nth-child(2){
+    animation-delay: 0.3s;
+}
+
+.circle4:nth-child(3){
+    animation-delay: 0.6s;
+}
+
+.circle4:nth-child(4){
+    animation-delay: 1s;
+}
+@keyframes rotate4{
+    to{
+        transform : rotate(360deg);
+    }
+}
+
+@keyframes scale4{
+    50%{
+        transform : scale(1);
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root{
+            --graident : linear-gradient(45deg,
+                #845ec2,
+                #d65db1,
+                #ff6f91,
+                #ff9671,
+                #ffc75f,
+                #f9f871
+            );
+        }
+
+    body {
+        margin : 0;
+        padding : 0;
+        min-height : 100vh;
+        width : 100%;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+
+
+        font-size : 1.125em;
+        line-height: 1.6;
+        color : #333;
+        background : #ddd;
+        background-size : 300%;
+        background-image : var(--graident);
+        animation : bg-animation 5s infinite alternate; /* importante alternate */
+    }
+    
+    @keyframes bg-animation {
+        0%{
+            background-position: left;
+            
+        }
+        100%{
+            background-position: right ;
+        }
+    }
+
+    .container{
+        width : 70vw;
+        background : wheat;
+        padding : 3em;
+        box-shadow : 0 0 3em rgba(0,0,0,.15);
+    }
+
+    .fun {
+        border : 0;
+        padding : 0.5em 1.5em;
+        font-size : 2rem;
+        background-image : var(--graident);
+        background-size : 300%;   /* importante  */
+        background-position: left;   /* importante  */
+        transition: background-position 1s;    /* importante  */
+     
+    }
+
+    .fun:hover{
+        background-position: right;
+    }
+
+    .title{
+        margin : 0 0 0.5em;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-style: italic;
+        font-size: 6rem;
+        color : #ee6352;
+        line-height: 0.8;
+        margin: 0;
+
+        background-image : var(--graident);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title"> Animating Gradients </h1>
+        <button class="fun">hover me</button>
+    </div>
+    
+</body>
+</html>

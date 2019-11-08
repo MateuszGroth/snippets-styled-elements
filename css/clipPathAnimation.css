@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+body {
+    background : #dcf5ff;
+    margin : 0;
+    height : 100vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Nunito', 'sans-serif'; 
+}
+
+/* .container {
+    width : 30%;
+    background: white;
+    border-radius: 10px;
+
+} */
+.inner {
+    /* background : #00b6ff; */
+    background : #07daa5;
+    padding : 1em;
+    border-radius : 10px;
+    width :250px;
+    /* size at x y*/
+    /* clip-path : inset(0% 0% 0% 0%); */
+    clip-path : circle(10% at 90% 20%); 
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+
+}
+.inner span {
+    float: right;
+    color : white;
+    font-weight: bold;
+    transition: color .5s;
+    position : relative;
+    margin-right : 4%;
+    margin-top : 2%;
+}
+
+h1 {
+    color : white;
+    margin : 0;
+}
+
+p {
+    color : white;
+    font-size : .8rem;
+}
+
+.inner:hover {
+    background : #00b6ff;
+    clip-path: circle(75%);
+}
+.inner:hover span{
+    color : rgba(255,255,255,0);
+}
+
+
+.inner2 {
+    /* background : #00b6ff; */
+    background : #07daa5;
+    padding : 1em;
+    border-radius : 10px;
+    width : calc(100% - 2em);
+    /* size at x y*/
+    clip-path : inset(100% 0% 0% 0%);
+    /* clip-path : circle(10% at 90% 20%);  */
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+
+}
+.container2 {
+    width : 30%;
+    background: white;
+    border-radius: 10px;
+
+}
+.container2:hover .inner2{
+    clip-path : inset(0% 0% 0% 0%);
+}

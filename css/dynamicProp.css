@@ -1,0 +1,34 @@
+body {
+  
+    height : 100vh;
+    margin : 0;
+    padding : 0;
+    display : grid;
+    justify-items: center;
+    align-items: center;
+    color : white;
+    
+}
+
+/* body::after{
+    
+    content : '';
+    position: absolute;
+    top : 0;
+    left : 0;
+    background : red;
+    height : var(--y);
+    width : var(--x);
+} */
+
+
+.card {
+    background : radial-gradient(circle at var(--x) var(--y), #5de7ff 0%, #0092ec 100%);
+    border-radius : 15px;
+    padding : 1em 2em;
+    width : 40%;
+}
+
+h1 , p {
+    pointer-events: none;
+}
