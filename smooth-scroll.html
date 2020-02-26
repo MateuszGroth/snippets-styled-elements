@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      .card {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        background: lightcoral;
+        border-top: lightskyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      .side-nav {
+        background: lightgray;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+      }
+
+      .side-nav__item {
+        display: inline-block;
+        background: lightslategrey;
+        color: lime;
+        font-size: 2rem;
+        height: 4rem;
+
+        display: flex;
+        align-items: center;
+        padding: 0 3rem 0 1rem;
+        border-top: 2px solid lightgray;
+        cursor: pointer;
+      }
+
+      .side-nav__item:hover {
+        background: lime;
+        color: lightslategrey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="side-nav">
+      <a href="#1" class="side-nav__item">One</a>
+      <a href="#2" class="side-nav__item">Two</a>
+      <a href="#3" class="side-nav__item">Three</a>
+      <a href="#4" class="side-nav__item">Four</a>
+      <a href="#5" class="side-nav__item">Five</a>
+    </div>
+    <div id="1" class="card">ONE</div>
+    <div id="2" class="card">TWO</div>
+    <div id="3" class="card">THREE</div>
+    <div id="4" class="card">FOUR</div>
+    <div id="5" class="card">FIVE</div>
+  </body>
+</html>
