@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* html {
+        scroll-behavior: smooth;
+      } */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vh);
+        scroll-snap-type: y mandatory;
+        /* scroll-snap-type: y mandatory; */
+        overflow-y: scroll;
+        /* overflow-y: scroll; */
+
+        /* scroll-padding-top: 10px; */
+        /* y Axis snap
+          ! MANDATORY ALWAYS snaps
+          ! Proximity snaps when close
+          */
+      }
+      * {
+        box-sizing: border-box;
+      }
+      section.card {
+        scroll-snap-align: start;
+        background: lightcoral;
+        border-top: 1px solid lightskyblue;
+
+        height: 100vh;
+        scroll-snap-align: start;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="1" class="card">ONE</section>
+    <section id="2" class="card">TWO</section>
+    <section id="3" class="card">THREE</section>
+  </body>
+</html>
