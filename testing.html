@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+
+      display: grid;
+      grid-template-columns: 300px;
+      /* grid-template-rows: 1fr; */
+      grid-auto-rows: 20px;
+      grid-gap: 2rem;
+      justify-content: center;
+      align-content: space-between;
+
+      align-items: stretch;
+
+      background-color: palegoldenrod;
+    }
+
+    div:first-of-type:nth-child(1) {
+      background: blue;
+    }
+    div.test.div {
+      background: green;
+    }
+
+    div {
+      background: white;
+    }
+    .dark {
+      background: black;
+    }
+  </style>
+  <script>
+    window.addEventListener(
+      'load',
+      function () {
+        document.querySelector('body').classList.add('dark');
+        console.log('co');
+      },
+      false
+    );
+  </script>
+  <body>
+    <div id="test" class="div test"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+  </body>
+  <script>
+    (function () {
+      console.log('coo 2');
+      if (!document || typeof document.cookie !== 'string') {
+        return;
+      }
+
+      if (document.cookie.indexOf('mode=dark') === -1) {
+        return;
+      }
+
+      var body = document.querySelector('body');
+      body.classList.add('dark-newasda');
+    })();
+  </script>
+</html>
